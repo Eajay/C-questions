@@ -85,7 +85,6 @@ void Graph::APUtil(int u, bool *visited, int *disc, int *low, int *parent, bool 
             low[u] = min(low[u], disc[v]);
     }
 }
-
 void Graph::AP(){
     bool *visited = new bool[V];
     int *disc = new int[V];
@@ -99,8 +98,12 @@ void Graph::AP(){
         ap[i] = false;
     }
     uint64_t tick = rdtsc();
+    APUtil(0, visited, disc, low, parent, ap);
     for(int i = 0; i < V; i++){
-        if(visited[i] == false) APUtil(i, visited, disc, low, parent, ap);
+        if(visited[i] == false){
+            cout << "This graph is not connected" << endl;
+            return;
+        }
     }
 
     int flag = 0;
@@ -118,6 +121,7 @@ void Graph::AP(){
     cout << "This costs "<< time << "ns" << endl;
 
 }
+
 void dataFromFile(int num, string path){
     ifstream file(path);
     int a, b;
