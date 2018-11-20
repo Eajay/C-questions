@@ -1,0 +1,31 @@
+This document is to explain how to use the code to find articulation points
+
+There are two ways to input data
+1. You can input data inside the code
+example:
+    Graph g1(5);
+    g1.addEdge(1, 0);
+    g1.addEdge(0, 2);
+    g1.addEdge(2, 1);
+    g1.addEdge(0, 3);
+    g1.addEdge(3, 4);
+    g1.AP();
+	// input the total number of nodes in graph
+	// function addEdge's parameters are the points from one edge
+	// The edges have to be undirected and don't repeat the edges
+	
+2. You can input data from outside files by function dataFromFile(int num, string path)
+	//num is the total number of nodes in graph
+	//path is the file's path
+example:
+	    dataFromFile(7, "test.txt");
+	
+	
+	
+*** make sure the graph is connected rather than separated graph	
+	
+	in the result:
+	first line: if it is not a bi-connected graph, you can get artigulation points
+	seconde line: you can get whether it is bi-connected graph or not
+	third line: how many time it costs
+
