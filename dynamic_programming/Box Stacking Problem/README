@@ -2,3 +2,17 @@ You are given a set of n types of rectangular 3-D boxes, where the i^th box has 
 You want to create a stack of boxes which is as tall as possible, but you can only stack a box on top of another box if the dimensions 
 of the 2-D base of the lower box are each strictly larger than those of the 2-D base of the higher box. Of course, you can rotate a box 
 so that any side functions as its base. It is also allowable to use multiple instances of the same type of box.
+
+
+     * condition 1: base_size[a] < base_size[b]
+     * condition 2: a.d < b.d
+     * condition 3: a.w < b.w
+     
+     sort the boxes depended on base size: d * w.
+     in LIS we have to make sure the order of the result is the same as the input array.
+     sort rot in order to create the order of input.
+     we can also sort depended on the d or w, which we don't need to consider base size.
+     
+     
+     O(n) + O(nlogn) + O(n^2) + O(n)
+     Therefore, total time complexity is O(n^2)
