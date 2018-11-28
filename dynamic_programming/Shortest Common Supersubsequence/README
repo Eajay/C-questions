@@ -1,0 +1,12 @@
+Given two strings str1 and str2, find the length of shortest string that has both str1 and str2 as subsequences.
+
+Input:   str1 = "geek",  str2 = "eke"
+Output: 5
+because "geeke"
+
+Length of the shortest supersequence  = (Sum of lengths of given two strings) -
+                                        (Length of LCS of two given strings) 
+                                        
+***
+
+O(mn)
