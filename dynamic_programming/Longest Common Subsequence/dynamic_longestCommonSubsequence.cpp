@@ -17,6 +17,22 @@ int longestCommonSubsequence(string s1, string s2){
             else L[i][j] = max(L[i-1][j], L[i][j-1]);
         }
     }
+    // the following code is to get characters
+    string sub; // to save the characters
+    int i = n1, j = n2;
+    while(i > 0 && j > 0){
+        //if current chars are the same, then it is part of the sub
+        if(s1[i-1] == s2[j-1]){
+            sub = s1[i-1] + sub;
+            i--;
+            j--;
+        }
+        // If not same, then find the larger of two and
+        // go in the direction of larger value
+        else if(L[i-1][j] > L[i][j-1]) i--;
+        else j--;
+    }
+    cout << sub << endl;
     return L[n1][n2];
 }
 int main(){
