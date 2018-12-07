@@ -1,0 +1,29 @@
+You are given a sequence of houses 1, 2, … n, and the cost to color those houses
+in k colors, using a 2-dimensional array: C[1..n,1..k]. C[i,j], where 1 ≤ i ≤ n, and
+1 ≤ j ≤ k, represents the cost to color the i-th house using j-th color. You want to
+minimize the cost to color all the houses, but with the constraint that no two nerghbor
+houses ( no consective houses) should receive the same color.
+
+C[][]:
+{2, 1, 3, 2, 3},
+{2, 6, 2, 3, 7},
+{2, 0, 4, 8, 2}}
+
+result:
+3
+
+
+
+***
+Let T(i,j) represent the minimum cost of coloring up till i-th house, such that the i-
+th house is colored using the j-th color.
+T(i, j) = min{ T(i-1, h) + C(i, j)}, where h = 1..k && h != j
+
+base case:
+T(1, j) = C(1, j) for all values of j.
+
+***
+
+
+
+O(n*k^2)
